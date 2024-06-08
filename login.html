@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  https://medion3.s3.us-east-2.amazonaws.com/static/css/style.css?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGwaCXVzLWVhc3QtMiJHMEUCIAUk29cmjTkc60w3CkPnWpPUUCy42wk0%2BYJJxM%2FzTSfyAiEA%2FuQrtTxTR%2Fia2szKCL%2FbJnUrrTL%2Bqlp8hsBRqIkxE7wq7QII9f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyMTExMjU1NTQyNTkiDMCg1ffC0swSHa%2FjwirBAnVGMvV61gyvkm3%2F2Azjg5x%2F0p7kF37w%2FEJev3JJ7pcxkEvFv0CNtebhytmsMYiyvvIN23qHzqtTnBeVkYLOpVPVgjDDFHgZtHvmN15KCWdHR4szZRv6qCWClqs1azPFwCRPScSl5W%2BNtJoFMYd%2BOTP31vHTubfGYvWiWlIWkwY0%2BUkIzJiAlXFzi2zY%2B1IloFRPKMp5gfwqVER77FEGyTFbx0WKN4O5p1ol%2F0bX0qw58d%2FaLD5tz73C5%2Bwp%2FcpB7HADx8WyJW3D2FiLum%2FHR%2FqftlSLbaxq0wMD%2FNnoBj7QlP2d2ZEa%2FPhBRE8AjabUFf3Nequx0Ygw4HnKX38ofeowpFNIJRFbyNuszq%2BtC3O7yqS78e%2BVBK0NiTiHQpeBVnCIaZ6qcdYTgsMQW17PAebHGJmGeCP92qZ9d0kbulPHuzCrxI2zBjqzAlvw3q4VfUkh4Dj5cSiTnw%2B65omBxHKYDqFp7q23kMsrErRafXJp0ByVtUR%2BzRzSawfhST0Y%2FIuseE9aHBhKiEMobDLxMdXNPbhZUkoR3HU5Zp3y%2BNvRVczw3hqBOSl0uWidiZvtk5ngfbKSNp5gxQUeVES1PA8DB4pw2VXgJ5M72PY7Fv7z6hknQGW43y2fv%2FnPGwlEZ02m2mN02ZJoza8NJ2zuBJ4uB5LOjtC%2FtSBLB%2FcyT25A534jO03iOozNwYAbcopV2ob%2Fsiq8gjSlzUez0FxJj2FCneNqY86OeHGv6dgiB1vuzaecGTTlUGw9CbDNTAMKKuKK3faE5ctB0f8SZQ4Q8p9rphl7rLDbTZT4ekQbLwaSMsLlbqr5X8XGmqlWbI9cUgCE4Nj%2FU5lpAvVyE7g%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240608T022155Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIATCKAQJRJQABJBX2G%2F20240608%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=a9ae7d0fd800cecd88cbc6e771cd74f0316b22dd2dada306c3b902dc91543777
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href={% static 'css/bootstrap.css' %}/>
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700|Roboto:400,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="https://medion3.s3.us-east-2.amazonaws.com/static/css/style.css?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGwaCXVzLWVhc3QtMiJHMEUCIAUk29cmjTkc60w3CkPnWpPUUCy42wk0%2BYJJxM%2FzTSfyAiEA%2FuQrtTxTR%2Fia2szKCL%2FbJnUrrTL%2Bqlp8hsBRqIkxE7wq7QII9f%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwyMTExMjU1NTQyNTkiDMCg1ffC0swSHa%2FjwirBAnVGMvV61gyvkm3%2F2Azjg5x%2F0p7kF37w%2FEJev3JJ7pcxkEvFv0CNtebhytmsMYiyvvIN23qHzqtTnBeVkYLOpVPVgjDDFHgZtHvmN15KCWdHR4szZRv6qCWClqs1azPFwCRPScSl5W%2BNtJoFMYd%2BOTP31vHTubfGYvWiWlIWkwY0%2BUkIzJiAlXFzi2zY%2B1IloFRPKMp5gfwqVER77FEGyTFbx0WKN4O5p1ol%2F0bX0qw58d%2FaLD5tz73C5%2Bwp%2FcpB7HADx8WyJW3D2FiLum%2FHR%2FqftlSLbaxq0wMD%2FNnoBj7QlP2d2ZEa%2FPhBRE8AjabUFf3Nequx0Ygw4HnKX38ofeowpFNIJRFbyNuszq%2BtC3O7yqS78e%2BVBK0NiTiHQpeBVnCIaZ6qcdYTgsMQW17PAebHGJmGeCP92qZ9d0kbulPHuzCrxI2zBjqzAlvw3q4VfUkh4Dj5cSiTnw%2B65omBxHKYDqFp7q23kMsrErRafXJp0ByVtUR%2BzRzSawfhST0Y%2FIuseE9aHBhKiEMobDLxMdXNPbhZUkoR3HU5Zp3y%2BNvRVczw3hqBOSl0uWidiZvtk5ngfbKSNp5gxQUeVES1PA8DB4pw2VXgJ5M72PY7Fv7z6hknQGW43y2fv%2FnPGwlEZ02m2mN02ZJoza8NJ2zuBJ4uB5LOjtC%2FtSBLB%2FcyT25A534jO03iOozNwYAbcopV2ob%2Fsiq8gjSlzUez0FxJj2FCneNqY86OeHGv6dgiB1vuzaecGTTlUGw9CbDNTAMKKuKK3faE5ctB0f8SZQ4Q8p9rphl7rLDbTZT4ekQbLwaSMsLlbqr5X8XGmqlWbI9cUgCE4Nj%2FU5lpAvVyE7g%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240608T022155Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIATCKAQJRJQABJBX2G%2F20240608%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Signature=a9ae7d0fd800cecd88cbc6e771cd74f0316b22dd2dada306c3b902dc91543777" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href={% static 'css/responsive.css' %} rel="stylesheet" />
+
+    <header class="header_section" style="background-color: rgb(22, 104, 111);">
+        <div class="container" bg-color="red">
+          <div class="top_contact-container" >
+            <div class="tel_container">
+              <a href="">
+                <img src='{% static "images/telephone-symbol-button.png" %}' alt=""> CONTACTO: +57 323 334 6940
+              </a>
+            </div>
+            <div class="social-container">
+              <a href="">
+                <img src='{% static "images/fb.png" %}' alt="" class="s-1">
+              </a>
+              <a href="">
+                <img src='{% static "images/twitter.png" %}' alt="" class="s-2">
+              </a>
+              <a href="">
+                <img src='{% static "images/instagram.png" %}' alt="" class="s-3">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+            <a class="navbar-brand" href="">
+              <img src='{% static "images/logoM.jpg" %}' alt="">
+              <span>
+                &nbsp; &nbsp;  Dra. Maritza Eraso &nbsp; &nbsp;
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex  flex-column flex-lg-row align-items-center w-100 justify-content-between">
+                <ul class="navbar-nav" >
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login">INGRESAR <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="nosotros"> NOSOTROS </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactanos">CONTACTANOS</a>
+                  </li>
+                </ul>
+                
+                
+              </div>
+            </div>
+  
+          </nav>
+        </div>
+      </header>
+    <title>Dra. Maritza Eraso</title>
+    <link rel="stylesheet" href={% static 'css/style2.css' %}>
+</head>
+<body>
+    <div class="container">
+        <div class="imagen">
+            <img src='{% static "images/persona.jpg" %}' alt="Imagen de dentista">
+        </div>
+
+        <div class="formulario">
+            <h1>Dra. Maritza Eraso</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
